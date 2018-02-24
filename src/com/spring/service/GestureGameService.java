@@ -32,7 +32,8 @@ public class GestureGameService {
 			break;
 
 		default:
-			System.out.println("您输入的数值不正确，请重新输入!");
+			System.out.println("您输入的数值不正确，再见!");
+			System.exit(0);
 			break;
 		}
 		p.setPlayer(player);
@@ -51,8 +52,9 @@ public class GestureGameService {
 		}
 	}
 
-	public void startGame(String s) {
-		gesture.setStartGame(s);
+	public void startGame() {
+		System.out.println("要开始吗？(y/n)");
+		String s = input.next();
 		if (s.equals("y")) {
 			gesTure();
 
@@ -60,7 +62,7 @@ public class GestureGameService {
 			gameOver();
 		} else {
 			System.out.println("输入的指令不正确！请重新输入.");
-			startGame(s);
+			startGame();
 		}
 	}
 
@@ -74,6 +76,7 @@ public class GestureGameService {
 			c.setGesture(j);
 			System.out.println(c.getUserName() + "出拳：" + gesturejudgo(c.getGesture()));
 			System.out.println("结果是:" + judgo(p.getGesture(), c.getGesture()));
+			gesTure();
 		} else if (i == 4) {
 			gameOver();
 		} else {

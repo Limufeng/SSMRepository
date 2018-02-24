@@ -26,9 +26,7 @@ public class GestureGameView {
 		System.out.println(play.selectUser(computer, player));
 	}
 	public void startGame() {
-		System.out.println("Òª¿ªÊ¼Âð£¿(y/n)");
-		String s = input.next();
-		play.startGame(s);
+		play.startGame();
 	}
 	
 }
