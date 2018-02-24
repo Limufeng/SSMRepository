@@ -2,11 +2,10 @@ package Test;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-
-import com.spring.view.GestureGameView;
+import com.spring.service.TeacherService;
 
 public class Test {
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		// System.out.println("test page !!!");
@@ -22,11 +21,11 @@ public class Test {
 		// System.out.println(t.getName());
 		// System.out.println(t.getStudent().getName());
 
-		// TeacherService ts=(TeacherService) context.getBean("ts");
-		// ts.doSomeService();
+		TeacherService ts = (TeacherService) context.getBean("ts");
+		ts.doSomeService();
 		
-		GestureGameView view=(GestureGameView) context.getBean("GestureGameView");
-		view.View();
+//		GestureGameView view=(GestureGameView) context.getBean("GestureGameView");
+//		view.View();
 		
 	}
 
