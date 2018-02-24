@@ -3,8 +3,7 @@ package Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.bean.Student;
-import com.bean.Teacher;
+import com.spring.view.GestureGameView;
 
 public class Test {
 
@@ -17,12 +16,18 @@ public class Test {
 		// Student s1 = (Student) context.getBean("s");
 		// System.out.println(s1.getName());
 
-		Teacher t = (Teacher) context.getBean("t");
-		t.setName("teacher--1");
-		t.setStudent(new Student("student--1"));
-		System.out.println(t.getName());
-		System.out.println(t.getStudent().getName());
+		// Teacher t = (Teacher) context.getBean("t");
+		// t.setName("teacher--1");
+		// t.setStudent(new Student("student--1"));
+		// System.out.println(t.getName());
+		// System.out.println(t.getStudent().getName());
 
+		// TeacherService ts=(TeacherService) context.getBean("ts");
+		// ts.doSomeService();
+		
+		GestureGameView view=(GestureGameView) context.getBean("GestureGameView");
+		view.View();
+		
 	}
 
 }

@@ -13,14 +13,28 @@
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 	<!-- <context:annotation-config />第二种方法：告诉Spring要用注解的方式配置
-	<bean name="s" class="@Resource(name="c").Student">
+	<bean name="s" class="com.bean.Student">
 		<property name="name" value="Student" />
 	</bean>
 	<bean name="t" class="com.bean.Teacher">
 		<property name="name" value="Teacher" />
 		<property name="student" ref="s" /> 
 	</bean>以上:注入对象行为注解  -->
-	
+
 	<context:component-scan base-package="com.bean"/>
+	<bean name="ts" class="com.spring.service.TeacherService"/>
+	<bean name="GestureGameService" class="com.spring.service.GestureGameService"/>
+	<bean name="GestureGameView" class="com.spring.view.GestureGameView"/>
+	<bean name="GestureGamedao" class="com.spring.dao.GestureGamedao" />
+	
+	<bean id="loggerAspect" class="com.spring.aspect.LoggerAspect"/>
+	
+	<aop:config >
+		<aop:pointcut expression="execution(* com.spring.service.TeacherService.*(..))" id="loggerCutpoint"/>
+			<aop:aspect id="logAspect" ref="loggerAspect">
+				<aop:around method="log" pointcut-ref="loggerCutpoint" />
+			</aop:aspect>
+	</aop:config>
+	
 
 </beans>
