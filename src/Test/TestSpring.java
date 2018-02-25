@@ -13,8 +13,10 @@ import com.bean.Student;
 public class TestSpring {
 	@Autowired
 	Student s;
+	
 	@Test
 	public void test() {
+		s.setName("test");
 		System.out.println(s.getName());
 	}
 }
